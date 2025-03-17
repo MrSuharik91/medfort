@@ -124,6 +124,7 @@
   }
   .people div p {
     font-size: 20px;
+    line-height: 24px;
   }
   .people div h2 {
     font-size: 22px;

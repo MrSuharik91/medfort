@@ -47,4 +47,10 @@
     line-height: 30px;
   }
 }
+@media (max-width: 700px) {
+  .wrapper-portfolio button {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
 </style>

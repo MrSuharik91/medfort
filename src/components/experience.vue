@@ -56,8 +56,19 @@
 }
 @media (max-width: 500px) {
   .bg h1 {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 38px;
+  }
+  .bg {
+    background-image: url(/public/bg-foto.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>

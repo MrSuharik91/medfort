@@ -111,6 +111,10 @@
   }
 }
 @media (max-width: 500px) {
+  .superpower h1 {
+    font-size: 45px;
+    line-height: 50px;
+  }
   .superpower-wrapper {
     grid-template-columns: 1fr;
   }

@@ -5,7 +5,6 @@ export default {
       d: false,
       formSent: false,
       menu: window.innerWidth < 750,
-      MenuDiv: false,
       email: "",
       name: "",
       number: "",
@@ -13,12 +12,6 @@ export default {
     };
   },
   methods: {
-    exit() {
-      this.MenuDiv = false;
-    },
-    MenuClick() {
-      this.MenuDiv = true;
-    },
     f() {
       if (this.d === false) {
         this.d = true;
@@ -42,21 +35,6 @@ export default {
 
 <template>
   <header>
-    <div class="menu-hide" v-if="MenuDiv">
-      <img class="exit" src="/exit.png" alt="" @click="exit" />
-      <div>
-        <p>Портфолио</p>
-      </div>
-      <div>
-        <p>Как мы работам</p>
-      </div>
-      <div>
-        <p>Цены</p>
-      </div>
-      <div>
-        <p>Команда</p>
-      </div>
-    </div>
     <div class="order" v-if="d">
       <img class="close" src="/close.png" alt="" @click="g" />
       <div v-if="!formSent" class="callback">
@@ -98,7 +76,17 @@ export default {
       </div>
     </div>
     <div class="header-wrapper">
-      <img src="/menu.svg" alt="" v-if="menu" @click="MenuClick" />
+      <div class="menu" v-if="menu">
+        <input type="checkbox" id="burger-checkbox" class="burger-checkbox" />
+        <label for="burger-checkbox" class="burger"></label>
+        <ul class="menu-list">
+          <li><a href="#" class="menu-item">Портфолио</a></li>
+          <li><a href="#" class="menu-item">Как мы работам</a></li>
+          <li><a href="#" class="menu-item">Цены</a></li>
+          <li><a href="#" class="menu-item">Команда</a></li>
+        </ul>
+      </div>
+
       <img class="logo" src="/Logo.svg" alt="" />
       <div class="header-inner">
         <a href="">Портфолио</a>
@@ -348,6 +336,79 @@ input[type="number"]::-webkit-outer-spin-button {
   right: 10px;
   top: 10px;
 }
+.burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.burger {
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 50px;
+  height: 26px;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: #000;
+}
+.burger::before {
+  top: 0;
+  box-shadow: 0 11px 0 #000;
+  transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+}
+.burger::after {
+  bottom: 0;
+  transition: bottom 0.3s 0.15s, transform 0.3s;
+}
+.burger-checkbox:checked + .burger::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+}
+.burger-checkbox:checked + .burger::after {
+  bottom: 11px;
+  transform: rotate(-45deg);
+  transition: bottom 0.3s, transform 0.3s 0.15s;
+}
+.menu-list {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: grid;
+  gap: 60px;
+  padding: 42px 0;
+  margin: 0;
+  background: orange;
+  list-style-type: none;
+  transform: translateX(-100%);
+  transition: 0.3s;
+  width: 60vw;
+}
+.menu-item {
+  display: block;
+  padding: 8px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.burger-checkbox:checked ~ .menu-list {
+  transform: translateX(0);
+}
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -443,16 +504,39 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 @media (max-width: 500px) {
+  .reverse {
+    width: 70%;
+  }
+  .button-header-div button {
+    width: 250px;
+    height: 49px;
+  }
+  .button-header-div h2 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .button-header-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .div-header-big {
+    flex-direction: column;
+  }
   .div-header-big img {
     width: 250px;
     height: 250px;
+    margin-top: 30px;
+  }
+  .first-div-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
   }
   .first-div-header h1 {
-    font-size: 30px;
-    line-height: 40px;
-  }
-  .button-header-div h2 {
-    font-size: 12px;
+    font-size: 32px;
+    line-height: 34px;
   }
 }
 </style>

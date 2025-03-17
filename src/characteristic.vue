@@ -75,7 +75,9 @@
           и разрешением.
           <br />
           <br />
-          Мы снимаем в 4K на камеры Fujifilm и Sony.
+          Мы снимаем в 4K на камеры
+          <br class="br" />
+          Fujifilm и Sony.
         </p>
       </div>
 
@@ -105,14 +107,17 @@
           <br />
           профессиональные
           <br />
-          кадры в качестве 4K используя коптер.
+          кадры в качестве 4K
+
+          <br class="br" />
+          используя коптер.
         </p>
       </div>
       <img class="copter" src="/copter.png" alt="" />
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .characteristic-wrapper {
   width: 90%;
   display: grid;
@@ -157,6 +162,9 @@
   bottom: 50px;
   right: 60px;
 }
+.br {
+  display: none;
+}
 @media (max-width: 1400px) {
   .characteristic-inner img {
     width: 200px;
@@ -185,7 +193,7 @@
 }
 @media (max-width: 700px) {
   .characteristic-wrapper {
-    grid-template-columns: 400px;
+    grid-template-columns: 1fr;
     justify-content: center;
   }
   .characteristic-inner p {
@@ -197,6 +205,19 @@
   }
   .characteristic-inner {
     padding-left: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .light {
+    right: 30px;
+  }
+  .br {
+    display: block;
+  }
+  .copter {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
   }
 }
 </style>

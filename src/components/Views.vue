@@ -321,4 +321,20 @@ span p {
     margin-bottom: 100px;
   }
 }
+@media (max-width: 500px) {
+  .views-h1 {
+    font-size: 38px;
+    line-height: 45px;
+  }
+  .views {
+    width: 90%;
+  }
+  span {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .grid-views div {
+    padding-right: 0;
+  }
+}
 </style>

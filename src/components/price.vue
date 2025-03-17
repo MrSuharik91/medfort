@@ -77,7 +77,7 @@
     </div>
   </div>
 </template>
-<style scopes>
+<style scoped>
 .price-wrapper h1 {
   color: #0094ff;
   font-size: 50px;
@@ -202,6 +202,13 @@
   .price-grid div button {
     width: 240px;
     height: 47px;
+  }
+}
+@media (max-width: 600px) {
+  .price-wrapper h1 {
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 50px;
   }
 }
 </style>

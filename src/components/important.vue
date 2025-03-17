@@ -41,4 +41,10 @@
     font-size: 20px;
   }
 }
+@media (max-width: 500px) {
+  .wrapper-important button {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
 </style>

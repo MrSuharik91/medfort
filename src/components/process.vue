@@ -20,7 +20,7 @@
         <br />
         продуктов.
       </p>
-      <img src="/lamp.svg" alt="" />
+      <img class="bulb" src="/lamp.svg" alt="" />
     </div>
     <div class="process">
       <span
@@ -108,7 +108,7 @@
         <br />
         продуктов.
       </p>
-      <img src="/graphic.svg" alt="" />
+      <img class="graphics" src="/graphic.svg" alt="" />
     </div>
     <div class="process">
       <span
@@ -130,7 +130,7 @@
         <br />
         продуктов.
       </p>
-      <img src="/montage.svg" alt=" " />
+      <img class="mount" src="/montage.svg" alt=" " />
     </div>
   </div>
 </template>
@@ -184,6 +184,7 @@ body {
 .clock {
   right: 10px !important;
 }
+
 @media (max-width: 1200px) {
   .process img {
     right: 20px;
@@ -210,6 +211,27 @@ body {
   .process p {
     font-size: 20px;
     line-height: 24px;
+  }
+}
+@media (max-width: 450px) {
+  .clock {
+    width: 130px;
+    height: 120px;
+  }
+  .bulb {
+    height: 120px;
+  }
+  .lamp {
+    width: 100px;
+    height: 120px;
+  }
+  .graphics {
+    width: 100px;
+    height: 110px;
+  }
+  .mount {
+    width: 130px;
+    height: 110px;
   }
 }
 </style>

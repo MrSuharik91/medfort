@@ -1,16 +1,18 @@
 <template>
   <div class="bott-wrapper">
     <div class="bott-inner">
-      <div>
+      <div class="bott-inner-first">
         <img src="/Logo.svg" alt="" />
         <span class="">
           <p>+7 495 139-0993</p>
           <h3>info@medford.media</h3>
         </span>
       </div>
-      <div>
+      <div class="bott-inner-first">
         <h1>
-          ЕСЛИ У ВАС ЕСТЬ КАКОЙ-ТО ВОПРОС, ОСТАВЬТЕ ВАШ ТЕЛЕФОН И МЫ
+          ЕСЛИ У ВАС ЕСТЬ КАКОЙ-ТО ВОПРОС,
+          <br class="br" />
+          ОСТАВЬТЕ ВАШ ТЕЛЕФОН И МЫ
           <br />
           ВАМ СРАЗУ ЖЕ ПЕРЕЗВОНИМ
         </h1>
@@ -51,7 +53,6 @@
   width: 90%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 90px;
 }
@@ -134,6 +135,14 @@
   line-height: 17.36px;
   color: white;
 }
+.bott-inner-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.br {
+  display: none;
+}
 @media (max-width: 1200px) {
   .bott-inner h1 {
     font-size: 14px;
@@ -152,26 +161,83 @@
   }
 }
 @media (max-width: 1000px) {
-  .bott-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   .button-bott {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: end;
   }
-  .bott-inner h1 {
-    text-align: center;
-    margin-top: 20px;
+  .bott-wrapper div span {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .bott-wrapper {
+    height: 450px;
+  }
+  .br {
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  .button-bott {
+    margin-top: 40px;
   }
 }
 @media (max-width: 600px) {
+  .button-bott {
+    margin-top: 40px;
+  }
+  .bott-inner img {
+    width: 180px;
+  }
+}
+@media (max-width: 550px) {
+  .button-bott input {
+    width: 180px;
+    box-sizing: border-box;
+  }
+  .button-bott button {
+    width: 180px;
+  }
+  .bott-inner img {
+    width: 160px;
+  }
   .bott-inner h1 {
+    font-size: 10px;
+    line-height: 17px;
+  }
+  .bott-bott div {
+    display: flex;
+    gap: 10px;
+  }
+  .bott-bott div p {
+    font-size: 11px;
+  }
+  .bott-bott h2 {
     font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .bott-bott div p {
+    font-size: 9px;
+  }
+  .bott-bott h2 {
+    font-size: 10px;
+  }
+  .button-bott input {
+    width: 160px;
+    box-sizing: border-box;
+  }
+  .button-bott button {
+    width: 160px;
+  }
+  .bott-inner img {
+    width: 120px;
+  }
+  .bott-inner h1 {
+    font-size: 9px;
+    line-height: 16px;
+  }
+  .bott-wrapper div span h3 {
+    font-size: 14px;
   }
 }
 </style>
