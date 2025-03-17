@@ -504,8 +504,14 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 @media (max-width: 500px) {
+  .callback h1 {
+    font-size: 14px;
+  }
+  .callback {
+    width: 75%;
+  }
   .reverse {
-    width: 70%;
+    width: 75%;
   }
   .button-header-div button {
     width: 250px;
